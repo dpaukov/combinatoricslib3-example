@@ -37,3 +37,7 @@ Clone the repository and run the following command:
 ```
 mvn package exec:java -Dexec.mainClass="org.paukov.combinatoricslib3.example.Main"
 ```
+Or you can run the example from commandAdd line
+```
+java -jar target/combinatoricslib3-example-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+```
