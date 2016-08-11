@@ -32,7 +32,7 @@ public class Example {
 }
 ```
 
-## How to build and execute this examples
+## How to build and execute this example
 Clone the repository and run the following command:
 ```
 mvn package exec:java -Dexec.mainClass="org.paukov.combinatoricslib3.example.Main"
