@@ -3,8 +3,37 @@
 # combinatoricslib3-example
 Code examples of how to use the [combinatoricslib3 for Java 8](https://github.com/dpaukov/combinatoricslib3)
 
-## How to build and execute the examples
+### Add combinatoricslib3 to your project
+```xml
+<dependency>
+    <groupId>com.github.dpaukov</groupId>
+    <artifactId>combinatoricslib3</artifactId>
+    <version>3.0.0</version>
+</dependency>
+```
 
+### Start using the Generator class
+For example, you can generate all combinations of `("red", "black", "white", "green", "blue")`
+
+```java
+import org.paukov.combinatorics3.Generator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Example {
+    public static void main(String[] args) {
+        List<List<String>> combinations = Generator.combination("red", "black", "white", "green", "blue")
+                .simple(3)
+                .stream()
+                .collect(Collectors.<List<String>>toList());
+
+        combinations.stream().forEach(System.out::println);
+    }
+}
+```
+
+## How to build and execute this examples
+Clone the repository and run the following command:
 ```
 mvn package exec:java -Dexec.mainClass="org.paukov.combinatoricslib3.example.Main"
 ```
