@@ -3,12 +3,12 @@
 # combinatoricslib3-example
 Code examples of how to use the [combinatoricslib3 for Java 8](https://github.com/dpaukov/combinatoricslib3)
 
-## Add combinatoricslib3 to your project
+## Add combinatoricslib3 v 3.1.1 to your project
 ```xml
 <dependency>
     <groupId>com.github.dpaukov</groupId>
     <artifactId>combinatoricslib3</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.1</version>
 </dependency>
 ```
 
