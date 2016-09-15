@@ -17,17 +17,13 @@ For example, you can generate all combinations of `("red", "black", "white", "gr
 
 ```java
 import org.paukov.combinatorics3.Generator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Example {
     public static void main(String[] args) {
-        List<List<String>> combinations = Generator.combination("red", "black", "white", "green", "blue")
+        Generator.combination("red", "black", "white", "green", "blue")
                 .simple(3)
                 .stream()
-                .collect(Collectors.<List<String>>toList());
-
-        combinations.stream().forEach(System.out::println);
+                .forEach(System.out::println)
     }
 }
 ```
@@ -49,6 +45,7 @@ java -jar target/combinatoricslib3-example-1.0.0-SNAPSHOT-jar-with-dependencies.
 2. [Combinations with repetitions](#2-combinations-with-repetitions)
 3. [Simple permutations](#3-simple-permutations)
 4. [Permutations with repetitions](#4-permutations-with-repetitions)
+5. [Subsets](#5-subsets)
 
 
 | Description                      | Is Order Important? | Is Repetition Allowed? | Stream  |
@@ -68,11 +65,10 @@ and the order of the cards in the hand does not matter.
 Let's generate all 3-combination of the set of 5 colors (red, black, white, green, blue).
 
 ```java
-   List<List<String>> combinations = Generator.combination("red", "black", "white", "green", "blue")
+   Generator.combination("red", "black", "white", "green", "blue")
        .simple(3)
        .stream()
-       .collect(Collectors.<List<String>>toList());
-   combinations.stream().forEach(System.out::println);
+       .forEach(System.out::println);
 
 ```
 And the result of 10 combinations
@@ -101,7 +97,8 @@ want to buy 3 pieces of fruit. You could select
 - (orange, orange, orange)
 
 ```java
-   Generator.combination(new String[] { "apple", "orange" })
+   Generator
+       .combination(new String[] { "apple", "orange" })
        .multi(3)
        .stream()
        .forEach(System.out::println);
@@ -121,7 +118,8 @@ containing the first three digits, 123, has six permutations: 123, 132, 213, 231
 This is an example of the permutations of the 3 string items (apple, orange, cherry):
 
 ```java
-   Generator.permutation("apple", "orange", "cherry")
+   Generator
+       .permutation("apple", "orange", "cherry")
        .simple()
        .stream()
        .forEach(System.out::println);
@@ -185,4 +183,47 @@ And the list of all 8 permutations
    [orange, apple, orange]
    [apple, orange, orange]
    [orange, orange, orange]
+```
+
+###5. Subsets
+A set A is a subset of a set B if A is "contained" inside B. A and B may coincide. 
+The relationship of one set being a subset of another is called inclusion or sometimes containment.
+
+Examples:
+
+The set (1, 2) is a proper subset of (1, 2, 3).
+Any set is a subset of itself, but not a proper subset.
+The empty set, denoted by ∅, is also a subset of any given set X.
+All subsets of (1, 2, 3) are:
+
+- ()
+- (1)
+- (2)
+- (1, 2)
+- (3)
+- (1, 3)
+- (2, 3)
+- (1, 2, 3)
+
+Here is a piece of code that generates all possible subsets of (one, two, three)
+
+```java
+   List<List<String>> subsets = Generator
+        .subset("one", "two", "three")
+        .simple()
+        .stream()
+        .collect(Collectors.<List<String>>toList());
+   subsets.stream().forEach(System.out::println);
+
+```
+And the list of all 8 subsets
+```
+   []
+   [one]
+   [two]
+   [one, two]
+   [three]
+   [one, three]
+   [two, three]
+   [one, two, three]
 ```

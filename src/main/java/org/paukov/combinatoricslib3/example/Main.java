@@ -39,5 +39,12 @@ public class Main {
                 .stream()
                 .collect(Collectors.<List<String>>toList());
         permutations.stream().forEach(System.out::println);
+
+        // Example 5
+        System.out.println("Subsets of  (one, two, three):");
+        Generator.subset("one", "two", "three")
+                .simple()
+                .stream()
+                .forEach(System.out::println);
     }
 }
