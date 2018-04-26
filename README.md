@@ -3,12 +3,12 @@
 # combinatoricslib3-example
 Code examples of how to use the [combinatoricslib3 for Java 8](https://github.com/dpaukov/combinatoricslib3)
 
-## Add combinatoricslib3 v3.2.0 to your project
+## Add combinatoricslib3 v3.3.0 to your project
 ```xml
 <dependency>
     <groupId>com.github.dpaukov</groupId>
     <artifactId>combinatoricslib3</artifactId>
-    <version>3.2.0</version>
+    <version>3.3.0</version>
 </dependency>
 ```
 
@@ -46,6 +46,8 @@ java -jar target/combinatoricslib3-example-1.0.0-SNAPSHOT-jar-with-dependencies.
 3. [Simple permutations](#3-simple-permutations)
 4. [Permutations with repetitions](#4-permutations-with-repetitions)
 5. [Subsets](#5-subsets)
+6. [Integer partitions](#6-integer-partitions)
+7. [Cartesian product](#7-cartesian-product)
 
 
 | Description                      | Is Order Important? | Is Repetition Allowed? | Stream  |
@@ -226,4 +228,61 @@ And the list of all 8 subsets
    [one, three]
    [two, three]
    [one, two, three]
+```
+
+### 6. Integer Partitions
+In number theory, a partition of a positive integer `n` is a way of writing `n` as a sum of positive integers.
+Two sums that differ only in the order of their summands are considered to be the same partition;
+if order matters then the sum becomes a composition. A summand in a partition is also called a part.
+
+The partitions of 5 are listed below:
+
+- 1 + 1 + 1 + 1 + 1
+- 2 + 1 + 1 + 1
+- 2 + 2 + 1
+- 3 + 1 + 1
+- 3 + 2
+- 4 + 1
+- 5
+
+Let's generate all possible partitions of 5:
+```java
+   Generator.partition(5)
+       .stream()
+       .forEach(System.out::println);
+```
+And the result of all 7 integer possible partitions:
+```
+   [1, 1, 1, 1, 1]
+   [2, 1, 1, 1]
+   [2, 2, 1]
+   [3, 1, 1]
+   [3, 2]
+   [4, 1]
+   [5]
+```
+
+
+### 7. Cartesian Product
+In set theory, a Cartesian Product A × B is the set of all ordered pairs (a, b) where a ∈ A and b ∈ B.
+
+As an example, suppose there are 3 sets of number, (1, 2, 3), (8) and (10, 20), and you want to get
+the Cartesian product of them.
+
+Source: [Cartesian Product](https://en.wikipedia.org/wiki/Cartesian_product)
+
+```java
+       Generator.cartesianProduct(Arrays.asList(1, 2, 3), Arrays.asList(8), Arrays.asList(10, 20))
+           .stream()
+           .forEach(System.out::println);
+```
+And the result will be:
+
+```
+   [1, 8, 10]
+   [1, 8, 20]
+   [2, 8, 10]
+   [2, 8, 20]
+   [3, 8, 10]
+   [3, 8, 20]
 ```

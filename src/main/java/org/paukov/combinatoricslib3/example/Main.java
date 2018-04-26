@@ -2,6 +2,7 @@ package org.paukov.combinatoricslib3.example;
 
 import org.paukov.combinatorics3.Generator;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,6 +45,12 @@ public class Main {
         System.out.println("Subsets of  (one, two, three):");
         Generator.subset("one", "two", "three")
                 .simple()
+                .stream()
+                .forEach(System.out::println);
+
+        // Example 6
+        System.out.println("Cartesian product of the lists (1, 2, 3), (8), and (10, 20) :");
+        Generator.cartesianProduct(Arrays.asList(1,2,3), Arrays.asList(8), Arrays.asList(10, 20))
                 .stream()
                 .forEach(System.out::println);
     }
