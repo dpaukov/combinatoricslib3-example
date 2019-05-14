@@ -48,6 +48,7 @@ java -jar target/combinatoricslib3-example-1.0.0-SNAPSHOT-jar-with-dependencies.
 5. [Subsets](#5-subsets)
 6. [Integer partitions](#6-integer-partitions)
 7. [Cartesian product](#7-cartesian-product)
+8. [k-Permutations](#8-k-permutations)
 
 
 | Description                      | Is Order Important? | Is Repetition Allowed? | Stream  |
@@ -286,3 +287,47 @@ And the result will be:
    [3, 8, 10]
    [3, 8, 20]
 ```
+
+### 8. k-Permutations
+You can generate k-Permutations with and without repetitions using the combination and permutation
+generators together. For example, 2-Permutations without repetitions of the lists (1, 2, 3):
+
+```java
+        Generator.combination(1, 2, 3)
+            .simple(2)
+            .stream()
+            .forEach(combination -> Generator.permutation(combination)
+                .simple()
+                .forEach(System.out::println));
+```
+prints the following 6 2-permutations:
+```
+   [1, 2]
+   [2, 1]
+   [1, 3]
+   [3, 1]
+   [2, 3]
+   [3, 2]
+```        
+
+Similarly, you can get 2-Permutations with repetitions of the lists (1, 2, 3):  
+```java 
+        Generator.combination(1, 2, 3)
+            .multi(2)
+            .stream()
+            .forEach(combination -> Generator.permutation(combination)
+                .simple()
+                .forEach(System.out::println));
+```
+prints the following 9 2-permutations:
+```
+   [1, 1]
+   [1, 2]
+   [2, 1]
+   [1, 3]
+   [3, 1]
+   [2, 2]
+   [2, 3]
+   [3, 2]
+   [3, 3]
+```        

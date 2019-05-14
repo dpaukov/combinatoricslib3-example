@@ -53,5 +53,24 @@ public class Main {
         Generator.cartesianProduct(Arrays.asList(1,2,3), Arrays.asList(8), Arrays.asList(10, 20))
                 .stream()
                 .forEach(System.out::println);
+
+        // Example 7. k-Permutations without repetitions
+        System.out.println("2-Permutations without repetitions of the lists (1, 2, 3) :");
+        Generator.combination(1, 2, 3)
+            .simple(2)
+            .stream()
+            .forEach(combination -> Generator.permutation(combination)
+                .simple()
+                .forEach(System.out::println));
+
+        // Example 8. k-Permutations with repetitions
+        System.out.println("2-Permutations with repetitions of the lists (1, 2, 3) :");
+        Generator.combination(1, 2, 3)
+            .multi(2)
+            .stream()
+            .forEach(combination -> Generator.permutation(combination)
+                .simple()
+                .forEach(System.out::println));
+
     }
 }
