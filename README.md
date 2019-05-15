@@ -290,7 +290,7 @@ And the result will be:
 
 ### 8. k-Permutations
 You can generate k-Permutations with and without repetitions using the combination and permutation
-generators together. For example, 2-Permutations without repetitions of the lists (1, 2, 3):
+generators together. For example, 2-Permutations without repetitions of the list (1, 2, 3):
 
 ```java
         Generator.combination(1, 2, 3)
@@ -300,7 +300,7 @@ generators together. For example, 2-Permutations without repetitions of the list
                 .simple()
                 .forEach(System.out::println));
 ```
-prints the following 6 2-permutations:
+it will print the following six 2-permutations of (1, 2, 3):
 ```
    [1, 2]
    [2, 1]
@@ -310,7 +310,7 @@ prints the following 6 2-permutations:
    [3, 2]
 ```        
 
-Similarly, you can get 2-Permutations with repetitions of the lists (1, 2, 3):  
+Similarly, you can get 2-Permutations with repetitions of the list (1, 2, 3):  
 ```java 
         Generator.combination(1, 2, 3)
             .multi(2)
@@ -319,7 +319,7 @@ Similarly, you can get 2-Permutations with repetitions of the lists (1, 2, 3):
                 .simple()
                 .forEach(System.out::println));
 ```
-prints the following 9 2-permutations:
+it will print the following nine 2-permutations of (1, 2, 3):
 ```
    [1, 1]
    [1, 2]
