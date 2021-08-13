@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dpaukov/combinatoricslib3-example.svg?branch=master)](https://travis-ci.org/dpaukov/combinatoricslib3-example)
+[![Build Status](https://travis-ci.com/dpaukov/combinatoricslib3-example.svg?branch=master)](https://travis-ci.com/github/dpaukov/combinatoricslib3-example)
 
 # combinatoricslib3-example
 Code examples of how to use the [combinatoricslib3 for Java 8](https://github.com/dpaukov/combinatoricslib3)
