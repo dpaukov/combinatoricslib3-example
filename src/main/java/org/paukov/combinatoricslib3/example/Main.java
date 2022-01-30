@@ -1,5 +1,7 @@
 package org.paukov.combinatoricslib3.example;
 
+import java.net.BindException;
+import java.util.stream.IntStream;
 import org.paukov.combinatorics3.Generator;
 
 import java.util.Arrays;
@@ -41,12 +43,29 @@ public class Main {
                 .collect(Collectors.<List<String>>toList());
         permutations.stream().forEach(System.out::println);
 
-        // Example 5
+        // Example 5.1 - All subsets
         System.out.println("Subsets of  (one, two, three):");
         Generator.subset("one", "two", "three")
                 .simple()
                 .stream()
                 .forEach(System.out::println);
+
+        // Example 5.2 - Subsets of the exact number of elements
+        System.out.println("Subsets of (one, two, three) that have 2 numbers:");
+        Generator.combination("one", "two", "three")
+            .simple(2)
+            .stream()
+            .forEach(System.out::println);
+
+        // Example 5.3 - All subsets ordered by size (number of the elements)
+        System.out.println("All Subsets of (one, two, three) ordered by size (number of elements)");
+        String[] arr = new String[]{"one", "two", "three"};
+        for (int i=0; i<=arr.length; i++) {
+            Generator.combination(arr)
+                .simple(i)
+                .stream()
+                .forEach(System.out::println);
+        }
 
         // Example 6
         System.out.println("Cartesian product of the lists (1, 2, 3), (8), and (10, 20) :");
