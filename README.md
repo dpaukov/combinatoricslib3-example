@@ -1,14 +1,14 @@
 [![Build Status](https://travis-ci.com/dpaukov/combinatoricslib3-example.svg?branch=master)](https://travis-ci.com/github/dpaukov/combinatoricslib3-example)
 
 # combinatoricslib3-example
-Code examples of how to use the [combinatoricslib3 for Java 8](https://github.com/dpaukov/combinatoricslib3)
+Code examples of how to use the [combinatoricslib3 for Java](https://github.com/dpaukov/combinatoricslib3)
 
-## Add combinatoricslib3 v3.3.3 to your project
+## Add combinatoricslib3 v3.4.0 to your project
 ```xml
 <dependency>
     <groupId>com.github.dpaukov</groupId>
     <artifactId>combinatoricslib3</artifactId>
-    <version>3.3.3</version>
+    <version>3.4.0</version>
 </dependency>
 ```
 
