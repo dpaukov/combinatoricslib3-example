@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/dpaukov/combinatoricslib3-example.svg?branch=master)](https://travis-ci.com/github/dpaukov/combinatoricslib3-example)
+[![Build Status](https://github.com/dpaukov/combinatoricslib3-example/actions/workflows/maven.yml/badge.svg)](https://github.com/dpaukov/combinatoricslib3-example/actions)
 
 # combinatoricslib3-example
 Code examples of how to use the [combinatoricslib3 for Java](https://github.com/dpaukov/combinatoricslib3)
